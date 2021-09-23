@@ -33,7 +33,7 @@ https://www.cplusplus.com/reference/
 
 ## Introduction
 
-In competitive programming, you often see wordings in combinatorics or probabilistic tasks like “output the answer modulo 109+7”, or when the answer is a fraction pq, “output the value pq-1 modulo 109+7”. We all know that modulo(%) just means remainder (If you don’t know, you should know by now): But how can we find the value of pq?
+In competitive programming, you often see wordings in combinatorics or probabilistic tasks like “output the answer modulo 10^9+7”, or when the answer is a fraction pq, “output the value p/q modulo 10^9+7”. We all know that modulo(%) just means remainder: But how can we find the value of pq?
 
 ## Basics in modular arithmetic
 
@@ -45,19 +45,19 @@ So, is 13 o’clock equivalent to 1 o’clock if we consider the clock, in which
 
 Indeed, this is undoubtedly true: you may verify with several examples. Therefore, by considering these equivalence relationships, we define ab (mod m): a and b are equivalent under modulo m. Or it simply means that when a and b are divided by m, their remainder are the same. We can deduce some crucial identities from it:
 
-a (mod m) + b (mod m) mod m = a+b (mod m)
-a (mod m) - b (mod m) mod m = a-b (mod m)
-a (mod m)  b (mod m) mod m = ab (mod m)
+a (mod m) + b (mod m) mod m ≡ a + b (mod m) \
+a (mod m) - b (mod m) mod m ≡ a - b (mod m) \
+a (mod m)  b (mod m) mod m ≡ ab (mod m)
 
 Which exactly means, where two numbers are equivalent under modulo m, they can be replaced by each other under addition, subtraction and multiplication!
 
 ## Raising High Power of Number
 
-Sometimes you are required to raise a number to a really big integer modulo m, for example ~10^8. How can we do it efficiently? Binary exponential is a solution.[2] We can recursively solve that for lower power, and inductively find the answer. Indeed a^{2k} =(ak)2 and a2k+1 =a(ak)2, and these two relationships are enough to find the power of numbers (if one is familiar with recursion).
+Sometimes you are required to raise a number to a really big integer modulo m, for example ~10^8. How can we do it efficiently? Binary exponential is a solution. We can recursively solve that for lower power, and inductively find the answer. Indeed a^{2k} = (a^k)^2 and a^{2k+1} = a(a^k)^2, and these two relationships are enough to find the power of numbers (if one is familiar with recursion).
 
-Suppose we have a chain. We can split it into almost half, and we can observe that the two parts are almost the same: therefore we need not compute the same thing repeatedly (this technique is also called divide-and-conquer). Time complexity O(log n) for computing an.
+Suppose we have a chain. We can split it into almost half, and we can observe that the two parts are almost the same: therefore we need not compute the same thing repeatedly (this technique is also called divide-and-conquer). Time complexity O(log n) for computing a^n.
 
 ## Modular Division
-You may ask, how about division? How can we divide a number by another in modulo? How can we solve bka(mod m) for k? A natural idea is, maybe there exist an inverse b-1 for each number b such that bb-11 (mod m). Then, multiply both sides by b-1, we have  kab-1(mod m). Indeed, such inverse exists and is unique for every integer b coprime to m, i.e. gcd(b, m) = 1, but the proof is beyond the scope of this text. (For interested readers, one can search for Bezout’s lemma and the uniqueness of modular inverse.) For now,  a(m)-1 is the inverse of a, where (n) is the Euler totient function, which counts the number of coprime number to n, since   a(m) 1(mod m) by Euler’s theorem[4]. Normally, if m is prime, (m) = m - 1. Therefore for usual prime p (e.g. 109+7, 998244353), ap-2 is exactly the modular inverse of a.
+You may ask, how about division? How can we divide a number by another in modulo? How can we solve bk ≡ a(mod m) for k? A natural idea is, maybe there exist an inverse b^{-1} for each number b such that bb^{-1} ≡ 1 (mod m). Then, multiply both sides by b-1, we have  k ≡ ab^{-1}(mod m). Indeed, such inverse exists and is unique for every integer b coprime to m, i.e. gcd(b, m) = 1, but the proof is beyond the scope of this text. (For interested readers, one can search for Bezout’s lemma and the uniqueness of modular inverse.) For now,  a(φ(m))-1 is the inverse of a, where φ(n) is the Euler totient function, which counts the number of coprime number to n, since   a^(φ(m)) ≡ 1(mod m) by Euler’s theorem. Normally, if m is prime, φ(m) = m - 1. Therefore for usual prime p (e.g. 10^9+7, 998244353), a^{p-2} is exactly the modular inverse of a.
 
 You may also calculate Combination & Permutation via this way, with stored factorials modulo m, and prefix-sum-style technique.
