@@ -43,7 +43,7 @@ The clock is at 8 o'clock. You rotate it clockwise 5 hours, the resulting clock 
 
 So, is 13 o’clock equivalent to 1 o’clock if we consider the clock, in which 12 hours is a cycle? It is trivial to see that it is true for addition and subtraction. Does it also hold for multiplication?
 
-Indeed, this is undoubtedly true: you may verify with several examples. Therefore, by considering these equivalence relationships, we define ab (mod m): a and b are equivalent under modulo m. Or it simply means that when a and b are divided by m, their remainder are the same. We can deduce some crucial identities from it:
+Indeed, this is undoubtedly true: you may verify with several examples. Therefore, by considering these equivalence relationships, we define a ≡ b (mod m): a and b are equivalent under modulo m. Or it simply means that when a and b are divided by m, their remainder are the same. We can deduce some crucial identities from it:
 
 a (mod m) + b (mod m) mod m ≡ a + b (mod m) \
 a (mod m) - b (mod m) mod m ≡ a - b (mod m) \
