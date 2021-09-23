@@ -1,4 +1,14 @@
-# Useful Materials
+# Motivation
+
+- online contests
+- school contests
+- friends (inter-school competitions)
+
+# Method
+
+- Think more & Learn more
+
+# Materials
 
 ## Online judges
 https://judge.hkoi.org/ \
