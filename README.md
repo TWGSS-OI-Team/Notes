@@ -53,7 +53,7 @@ Which exactly means, where two numbers are equivalent under modulo m, they can b
 
 ## Raising High Power of Number
 
-Sometimes you are required to raise a number to a really big integer modulo m, for example ~10^8. How can we do it efficiently? Binary exponential is a solution.[2] We can recursively solve that for lower power, and inductively find the answer. Indeed a2k =(ak)2 and a2k+1 =a(ak)2, and these two relationships are enough to find the power of numbers (if one is familiar with recursion).
+Sometimes you are required to raise a number to a really big integer modulo m, for example ~10^8. How can we do it efficiently? Binary exponential is a solution.[2] We can recursively solve that for lower power, and inductively find the answer. Indeed a^{2k} =(ak)2 and a2k+1 =a(ak)2, and these two relationships are enough to find the power of numbers (if one is familiar with recursion).
 
 Suppose we have a chain. We can split it into almost half, and we can observe that the two parts are almost the same: therefore we need not compute the same thing repeatedly (this technique is also called divide-and-conquer). Time complexity O(log n) for computing an.
 
