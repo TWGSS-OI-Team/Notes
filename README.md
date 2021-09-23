@@ -15,6 +15,6 @@ https://www.geeksforgeeks.org/ (simple knowledges)
 https://www.codingame.com/home
 
 ## References
-https://hkoi.org/zh/useful-links/ \ 
+https://hkoi.org/zh/useful-links/ \
 https://en.cppreference.com/w/ \
 https://www.cplusplus.com/reference/
